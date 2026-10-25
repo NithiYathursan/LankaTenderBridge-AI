@@ -1,0 +1,32 @@
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# VS Code
+.vscode/
+
+# Raw and processed datasets
+data/raw/
+data/processed/
+
+# Generated model artifacts
+artifacts/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
