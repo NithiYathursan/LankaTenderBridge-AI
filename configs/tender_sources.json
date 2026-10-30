@@ -1,0 +1,38 @@
+{
+  "project": "LankaTenderBridge AI",
+  "version": "0.1.0",
+  "sources": [
+    {
+      "id": "gov_gazette",
+      "name": "Department of Government Printing",
+      "base_url": "https://documents.gov.lk",
+      "source_type": "government_gazette",
+      "status": "pending_verification",
+      "collection_enabled": false
+    },
+    {
+      "id": "railways",
+      "name": "Sri Lanka Railways",
+      "base_url": "https://www.railway.gov.lk",
+      "source_type": "department_procurement",
+      "status": "pending_verification",
+      "collection_enabled": false
+    },
+    {
+      "id": "ceb",
+      "name": "Ceylon Electricity Board",
+      "base_url": "https://www.ceb.lk",
+      "source_type": "utility_procurement",
+      "status": "pending_verification",
+      "collection_enabled": false
+    },
+    {
+      "id": "waterboard",
+      "name": "National Water Supply and Drainage Board",
+      "base_url": "https://www.waterboard.lk",
+      "source_type": "utility_procurement",
+      "status": "pending_verification",
+      "collection_enabled": false
+    }
+  ]
+}
