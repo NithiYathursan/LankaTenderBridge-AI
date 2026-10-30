@@ -1,21 +1,18 @@
 import sys
 from pathlib import Path
 from unittest.mock import Mock
-
 import pytest
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-COLLECTION_DIR = (
-    PROJECT_ROOT / "src" / "lankatenderbridge" / "collection"
-)
+sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
-sys.path.insert(0, str(COLLECTION_DIR))
+from lankatenderbridge.collection.page_checker import check_page
+from lankatenderbridge.collection.robots_checker import check_robots
 
 
-from page_checker import check_page
-from robots_checker import check_robots
+
 
 
 @pytest.fixture
@@ -45,7 +42,7 @@ def test_page_reachable(monkeypatch, capsys, sample_source):
     response.__exit__ = Mock(return_value=False)
 
     monkeypatch.setattr(
-        "page_checker.requests.get",
+        "lankatenderbridge.collection.page_checker.requests.get",
         lambda *args, **kwargs: response
     )
 
@@ -69,7 +66,7 @@ def test_page_forbidden(monkeypatch, capsys, sample_source):
     response.__exit__ = Mock(return_value=False)
 
     monkeypatch.setattr(
-        "page_checker.requests.get",
+        "lankatenderbridge.collection.page_checker.requests.get",
         lambda *args, **kwargs: response
     )
 
@@ -94,7 +91,7 @@ def test_robots_allowed(monkeypatch, capsys, sample_source):
     )
 
     monkeypatch.setattr(
-        "robots_checker.requests.get",
+        "lankatenderbridge.collection.robots_checker.requests.get",
         lambda *args, **kwargs: response
     )
 
@@ -112,7 +109,7 @@ def test_robots_missing(monkeypatch, capsys, sample_source):
     response.status_code = 404
 
     monkeypatch.setattr(
-        "robots_checker.requests.get",
+        "lankatenderbridge.collection.robots_checker.requests.get",
         lambda *args, **kwargs: response
     )
 
