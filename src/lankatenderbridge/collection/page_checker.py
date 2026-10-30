@@ -1,8 +1,7 @@
 import requests
 
 from urllib.parse import urljoin
-
-from source_registry import load_sources
+from lankatenderbridge.collection.source_registry import load_sources
 
 
 USER_AGENT = "LankaTenderBridgeResearch/0.1"
